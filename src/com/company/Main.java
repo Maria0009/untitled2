@@ -1,10 +1,11 @@
 package com.company;
 
 import java.util.Scanner;
-
+//+, but use 1 class for 1 task.
 public class Main {
 
     public static void main(String[] args) {
+        //please, use text formatting - Ctrl + alt + L.
         Scanner scanner= new Scanner(System.in);
 //Задачи по if-else:
 //Задача 1 Пользователь вводит 3 числа. Найти максимальное и вывести его. Решить 2 способами:
@@ -14,6 +15,9 @@ public class Main {
         double second= scanner.nextDouble();
         double third= scanner.nextDouble();
         //First method
+        
+        //What if I enter 3 equal numbers? 
+        //+
         if(first>second && first>third){
             System.out.println("Max number is: "+first);
         }
@@ -24,10 +28,14 @@ public class Main {
             System.out.println("Max number is: "+third);
         }
         //Second method
+        
+        //Cool, +
         double maxFirstSecond=Math.max(first,second);
         double maxNumber=Math.max(maxFirstSecond,third);
         System.out.println("Max number is: "+maxNumber);
         //Third method
+        
+        //+
         if(first>second){
             if(first>third){
                 System.out.println("Max number is: "+first);
@@ -44,10 +52,12 @@ public class Main {
             }
         }
 
-//Задача 2 Пользователь вводит 2 числа. Проверить кратное ли первое 2 –у
+//Задача 2 Пользователь вводит 2 числа. Проверить кратное ли первое 2 –у (second)
         System.out.println("Enter 2 numbers:");
         double num1= scanner.nextDouble();
         double num2= scanner.nextDouble();
+        
+        //This logic is not clear for me. Why (2-num2)?
         if (num1%(2-num2)==0) {
             System.out.println("Entered first number is multiply!");
         } else {
@@ -55,6 +65,7 @@ public class Main {
         }
 
 //Задача 3 Пользователь вводит число. Отображаем название дня недели, иначе, что такого дня нет.
+        //+
         System.out.println("Enter number day of the week:");
         int number= scanner.nextInt();
         String dayWeek1;
@@ -86,6 +97,7 @@ public class Main {
 
 //Задачи на switch – case:
 //Задача 4 Пользователь вводит число. Отображаем название дня недели, иначе, что такого дня нет (т.е переписать 2.3 с другой конструкцией)
+        //+
         System.out.println("Enter number day of the week:");
         int num= scanner.nextInt();
         String dayWeek;
@@ -118,6 +130,7 @@ public class Main {
         System.out.println(dayWeek);
 
 //Задача 5 Пользователь вводит месяц в виде числа от 1 до 12 Определите в какую пору года попадает этот месяц (зима, лето, весна, осень).
+        //+
         System.out.println("Enter number month:");
         int numb= scanner.nextInt();
         String timeOfTheYear;
@@ -142,6 +155,7 @@ public class Main {
 
 //Реализуем калькулятор:
         //First version
+        //+
         System.out.println("Enter first number:");
         double numberFirst=scanner.nextDouble();
         System.out.println("Enter second number:");
@@ -152,7 +166,9 @@ public class Main {
                     "'2' -Difference; " +
                     "'3' -Division; " +
                     "'4' -Multiplication;");
+            //Why do wee need to use char? We can use int either: enter just 1,2,.. without ''
             //int operat = scanner.nextInt();// приводит к ошибке если вводим символ
+            //If we do not have number we will get into default section
             char operat = scanner.next().charAt(0);//исспользовала char для ситуации: если пользователь введет символ (число), которого у нас нет)
             double result1;
             switch (operat) {
@@ -182,6 +198,7 @@ public class Main {
         }
 
         //Second version
+        //+
         System.out.println("Enter first number:");
         double numFirst=scanner.nextDouble();
         System.out.println("Enter second number:");
@@ -192,6 +209,7 @@ public class Main {
                     "'-' -Difference; " +
                     "'/' -Division; " +
                     "'*' -Multiplication;");
+            //We can use String either. Just write default section (else) for any other cases. char ok too.
             char c = scanner.next().charAt(0);// ввод одного символа
             if (c == '+') {
                 double result = numFirst + numSecond;
